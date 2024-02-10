@@ -33,7 +33,7 @@ Además de colocarlos directamente en el marcado, los atributos ARIA se pueden a
 var progressBar = document.getElementById("percent-loaded");
 
 // Configurando estados y roles ARIA
-// so that assistive technologies know what kind of widget it is.
+// para que la tecnología de asistencia conozca que tipo de widget es.
 progressBar.setAttribute("role", "progressbar");
 progressBar.setAttribute("aria-valuemin", 0);
 progressBar.setAttribute("aria-valuemax", 100);
