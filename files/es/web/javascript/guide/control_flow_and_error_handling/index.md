@@ -286,7 +286,7 @@ La declaración `try...catch` marca un bloque de expresiones para probar y espec
 
 La declaración `try...catch` consta de un bloque `try`, que contiene una o más declaraciones, y un bloque `catch`, que contiene declaraciones que especifican qué hacer si se lanza una excepción en el bloque `try`.
 
-En otras palabras, deseas que el bloque `try` tenga éxito, pero si no es así, deseas que el control pase al bloque `catch`. Si alguna instrucción dentro del bloque `try` (o en una función llamada desde dentro del bloque `try`) arroja una excepción, el control _inmediatamente_ cambia al bloque `catch`. Si no se lanza ninguna excepción en el bloque `try`, se omite el bloque `catch`. El bloque `finalmente` se ejecuta después de que se ejecutan los bloques `try` y `catch`, pero antes de las declaraciones que siguen a la declaración `try...catch`.
+En otras palabras, deseas que el bloque `try` tenga éxito, pero si no es así, deseas que el control pase al bloque `catch`. Si alguna instrucción dentro del bloque `try` (o en una función llamada desde dentro del bloque `try`) arroja una excepción, el control _inmediatamente_ cambia al bloque `catch`. Si no se lanza ninguna excepción en el bloque `try`, se omite el bloque `catch`. El bloque `finally` se ejecuta después de que se ejecutan los bloques `try` y `catch`, pero antes de las declaraciones que siguen a la declaración `try...catch`.
 
 El siguiente ejemplo usa una instrucción `try...catch`. El ejemplo llama a una función que recupera el nombre de un mes de un arreglo en función del valor pasado a la función. Si el valor no corresponde a un número de mes (`1`-`12`), se lanza una excepción con el valor "`InvalidMonthNo`" y las declaraciones en el bloque `catch` establezca la variable `monthName` en '`unknown`'.
 
@@ -401,7 +401,7 @@ function f() {
   try {
     throw "bogus";
   } catch (e) {
-    console.log('captura "falso" interno');
+    console.log('"falso" interno capturado');
     throw e; // esta instrucción throw se suspende hasta
     // que el bloque finally se haya completado
   } finally {
@@ -458,7 +458,7 @@ try {
   doSomethingErrorProne();
 } catch (e) {               // AHORA, en realidad usamos `console.error()`
   console.error(e.name);    // registra 'Error'
-  console.error(e.message); // registra 'The message' o un mensaje de error de JavaScript
+  console.error(e.message); // registra 'El mensaje' o un mensaje de error de JavaScript
 }
 ```
 
